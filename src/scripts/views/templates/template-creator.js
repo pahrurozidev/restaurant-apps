@@ -3,18 +3,18 @@ import CONFIG from '../../globals/config';
 const createRestoListItemTemplate = (data) => {
     const subStr = data.description.substring(0, 100);
     return `<div class="card card-resto-item">
-            <div class="card-header">
-                <img tabindex="0" class="lazyload" src="${CONFIG.BASE_IMAGE_URL_MEDIUM}/${data.pictureId}" alt="${data.name}">
-                <div tabindex="0" class="city">${data.city}</div>
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="${`/#/detail/${data.id}`}" class="card-title-link">${data.name}</a>
-                </h3>
-                <p tabindex="0">${subStr}</p>
-                <h4 tabindex="0">Rating: ${data.rating}</h4>
-            </div>
-        </div>`;
+                <div class="card-header">
+                    <img tabindex="0" class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM}/${data.pictureId}" alt="${data.name}">
+                    <div tabindex="0" class="city">${data.city}</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="${`/#/detail/${data.id}`}" class="card-title-link">${data.name}</a>
+                    </h3>
+                    <p tabindex="0">${subStr}</p>
+                    <h4 tabindex="0">Rating: ${data.rating}</h4>
+                </div>
+            </div>`;
 };
 
 const createRestoDetailTemplate = (data) => {
@@ -23,7 +23,7 @@ const createRestoDetailTemplate = (data) => {
     return `
         <section tabindex="0" class="detailResto">
             <aside class="picture">
-                <img tabindex="0" class="lazyload" src="${CONFIG.BASE_IMAGE_URL_LARGE}/${data.restaurant.pictureId}" alt="${data.restaurant.name}">
+                <img tabindex="0" class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_LARGE}/${data.restaurant.pictureId}" alt="${data.restaurant.name}">
             </aside>
             <aside class="description">
                 <h3 tabindex="0">${data.restaurant.name}</h3>

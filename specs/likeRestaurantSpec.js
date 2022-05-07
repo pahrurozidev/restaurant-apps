@@ -10,12 +10,12 @@ describe('Liking A Resto', () => {
         addLikeButtonContainer();
     });
 
-    xit('should show the like button when the Resto has not been liked before', async () => {
+    it('should show the like button when the Resto has not been liked before', async () => {
         await TestFactories.createLikeButtonPresenterWithResto({
             id: 1,
         });
 
-        expect(document.querySelector('[aria-label="like this Resto"]'))
+        expect(document.querySelector('[aria-label="like this resto"]'))
             .toBeTruthy();
     });
 
@@ -24,7 +24,7 @@ describe('Liking A Resto', () => {
             id: 1,
         });
 
-        expect(document.querySelector('[aria-label="unlike this Resto"]'))
+        expect(document.querySelector('[aria-label="unlike this resto"]'))
             .toBeFalsy();
     });
 
@@ -59,7 +59,7 @@ describe('Liking A Resto', () => {
         FavoriteRestoIdb.deleteResto(1);
     });
 
-    xit('should not add a Resto when it has no id', async () => {
+    it('should not add a Resto when it has no id', async () => {
         await TestFactories.createLikeButtonPresenterWithResto({});
 
         document.querySelector('#likeButton').dispatchEvent(new Event('click'));
